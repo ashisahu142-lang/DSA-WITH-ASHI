@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    int countOddDigits(int n) {
+        long long num = llabs((long long)n);
+        int count = 0;
+
+        while (num > 0) {
+            int digit = num % 10;
+
+            if (digit % 2 != 0) {
+                count++;
+            }
+
+            num /= 10;
+        }
+
+        return count;
+    }
+};
+
+int main() {
+    int n = 45231;
+
+    Solution obj;
+    cout << obj.countOddDigits(n) << endl;
+
+    return 0;
+}
